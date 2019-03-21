@@ -15,9 +15,6 @@ Vagrant.configure("2") do |config|
 
     config.vm.synced_folder "../shared-data", "/vagrant_data"
 
-    #install web server
-    #config.vm.provision "shell", path: "scripts/installWebServer.sh"
-
   end
 
 
