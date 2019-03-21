@@ -2,7 +2,7 @@
 
 out=$(packer validate template.json)
 
-# we should check out == hello shell
+# we should check out == successful validate from Packer
 if [ "${out}" == "Template validated successfully." ];then
   echo "GOOD: Packer CI test pass"
 else
