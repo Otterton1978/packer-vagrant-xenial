@@ -9,6 +9,7 @@ Clone the repository and then use packer to build the image.  It is a pre-requir
 ``` bash
 $git clone https://github.com/sharabinth/packer-vagrant-xenial.git
 $cd packer-vagrant-xenial
+$packer validate template.json
 $packer build template.json
 ```
 
@@ -30,8 +31,9 @@ to SSH into the image.
 
 ## Test Sync Folders
 
-The provided Vagrantfile syncs a host folder with the guest.
-The host folder is defined one level up the current folder and named as shared-data.  The synced folder in the guest VM is located at /vagrant_data
+By default Vagrant shares the current folder in host to /vagrant in the guest.
+The provided Vagrantfile syncs a custom host folder with the guest.
+The custom host folder is defined one level up the current folder and named as shared-data.  The synced folder in the guest VM is located at /vagrant_data
 
 The definition in the Vagrantfile is shown below.
 
@@ -39,7 +41,7 @@ The definition in the Vagrantfile is shown below.
 config.vm.synced_folder "../shared-data", "/vagrant_data"
 ```
 
-To test this create a folder named as shared-folder in one level up from the current folder in host then create a file.  Then do ssh into the image and check whether /vagrant_data exists in the VM and check the content of the folder to test the shared file. 
+To test this create a folder named as *shared-folder* in one level up from the current folder in host and create a file.  Then do ssh into the image and check whether folder */vagrant_data* exists in the VM and check the content of the folder to test the shared file. 
 
 
 
