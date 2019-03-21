@@ -1,0 +1,10 @@
+language: generic
+
+dist: xenial
+sudo: required
+
+#before_install:
+#- bash travis/install-packer.sh
+
+script:
+- bash test.sh
