@@ -1,4 +1,5 @@
-# Ubuntu Xenial 16.04 
+# Purpose
+
 Packer template to create a vagrant base image with Ubuntu Xenial 16.04 LTS image.
 It also has a Vagrant file to test the newly created image.
 
@@ -43,5 +44,7 @@ config.vm.synced_folder "../shared-data", "/vagrant_data"
 
 To test this create a folder named as *shared-folder* in one level up from the current folder in host and create a file.  Then do ssh into the image and check whether folder */vagrant_data* exists in the VM and check the content of the folder to test the shared file. 
 
+## CI Test
 
+Travis CI is test is integrated with the repo.  When the repo is added in Travis for mnonitoring then it would test the packer template file for validation.
 
