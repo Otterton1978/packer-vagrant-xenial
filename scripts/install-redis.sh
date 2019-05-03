@@ -32,5 +32,5 @@ sudo systemctl restart redis-server.service
 # 127.0.0.1:6379> exit
 
 echo "++++++++++++++++++++++++++++++++"
-echo "Completed curl and jq Installation "
+echo "Completed redis Installation "
 echo "+++++++++++++++++++++++++++++++++"
