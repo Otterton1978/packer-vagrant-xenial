@@ -1,7 +1,7 @@
 {
   "variables": {
-    "name": "maha/ubuntu-1604",
-    "build_name": "ubuntu-1604",
+    "name": "maha/docker-ce",
+    "build_name": "docker-ce-xenial64",
     "build_cpu_cores": "1",
     "build_memory": "1024",
     "cpu_cores": "1",
@@ -26,7 +26,7 @@
   "builders": [
     {
       "name": "{{ user `build_name` }}-vbox",
-      "vm_name": "{{ user `build_name` }}-vbox",
+      "vm_name": "{{ user `build_name` }}",
       "boot_command": [
         "<enter><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
         "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
@@ -71,6 +71,16 @@
     {
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "script": "scripts/provision.sh",
+      "type": "shell"
+    },
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "script": "scripts/install-utils.sh",
+      "type": "shell"
+    },
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "script": "scripts/install-docker.sh",
       "type": "shell"
     }
   ],
