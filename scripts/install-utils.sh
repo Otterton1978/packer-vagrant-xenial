@@ -8,11 +8,11 @@ sudo apt-get update
 
 echo "++++++++++++++++++++++++++++++++"
 echo "Update Completed Successfully"
-echo "Now install curl and jqr"
+echo "Now install curl, jq and git"
 echo "++++++++++++++++++++++++++++++++"
 
-sudo apt-get install -y curl jq
+sudo apt-get install -y curl jq git
 
-echo "++++++++++++++++++++++++++++++++"
-echo "Completed curl and jq Installation "
-echo "+++++++++++++++++++++++++++++++++"
+echo "++++++++++++++++++++++++++++++++++++++++"
+echo "Completed curl, jq and git Installation "
+echo "++++++++++++++++++++++++++++++++++++++++"
