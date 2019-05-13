@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-out=$(packer validate template.json)
+out=$(packer validate mysql-template.json)
 
 # we should check out == successful validate from Packer
 if [ "${out}" == "Template validated successfully." ];then
